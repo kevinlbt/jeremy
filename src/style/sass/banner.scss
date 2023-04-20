@@ -1,0 +1,41 @@
+.banner {
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+
+    & div {
+        width: 80%;
+
+        & h2 {
+            font-size: 6em;
+            color: $text-color;
+            font-family: $font-title;
+            text-transform: uppercase;
+        }
+
+        & p {
+            font-size: 1.3em;
+            color: $text-color;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1em;
+        }
+
+        & a {
+            align-self: flex-start;
+            font-size: 1.3em;
+            color: $main-color;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-bottom: 2px solid $main-color;
+
+            &::after {
+                margin-left: 0.6em;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f30b";
+            }
+        }
+    }
+}

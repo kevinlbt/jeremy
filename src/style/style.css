@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&display=swap");
+.nav {
+  background-color: #262626;
+}
+.nav img {
+  width: 30rem;
+  height: auto;
+}
+.nav a {
+  font-family: "Montserrat", sans-serif;
+}
+.nav a:hover {
+  border-bottom: 1px solid #88E9D4;
+}
+
+.header {
+  background-image: url("../../public/assets/jeremyfond.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+}
+
+.banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+}
+.banner div {
+  width: 80%;
+}
+.banner div h2 {
+  font-size: 6em;
+  color: aliceblue;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+.banner div p {
+  font-size: 1.3em;
+  color: aliceblue;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1em;
+}
+.banner div a {
+  align-self: flex-start;
+  font-size: 1.3em;
+  color: #88E9D4;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 2px solid #88E9D4;
+}
+.banner div a::after {
+  margin-left: 0.6em;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f30b";
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

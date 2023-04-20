@@ -1,0 +1,20 @@
+.nav {
+
+    background-color: $background-color;
+
+    & img {
+        width: 30rem;
+        height: auto;
+    }
+
+    & a {
+        font-family: $font-title;
+
+        &:hover {
+            border-bottom: 1px solid $main-color;
+        }
+    }
+
+
+
+}
