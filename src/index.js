@@ -9,7 +9,7 @@ import Contact from './pages/Contact';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import NavBar from './components/NavBar';
-
+import Footer from './components/Footer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +22,7 @@ root.render(
         <Route path='/about' Component={About}/>
         <Route path='/contact' Component={Contact}/>
       </Routes>
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );

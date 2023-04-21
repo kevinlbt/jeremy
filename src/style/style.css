@@ -17,17 +17,30 @@
   background-image: url("../../public/assets/jeremyfond.webp");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   width: 100%;
-  height: 80vh;
+  height: 50vw;
 }
 
 .banner {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 80vh;
+  background-attachment: fixed;
+  height: 40vw;
 }
 .banner div {
   width: 80%;
+}
+.banner div .slide1,
+.banner div .slide2,
+.banner div .slide3 {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+.banner div .active {
+  transform: translateX(0%);
+  opacity: 1;
 }
 .banner div h2 {
   font-size: 6em;
@@ -55,6 +68,107 @@
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f30b";
+}
+
+footer {
+  background-color: #262626;
+  padding: 2em 2em 0 2em;
+}
+footer div .social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -10px;
+}
+footer div .social-buttons__button {
+  margin: 10px 5px 0;
+}
+footer div .social-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  border-radius: 100%;
+  background: #88E9D4;
+  text-align: center;
+}
+footer div .social-button::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  transition: 0.3s;
+}
+footer div .social-button:focus,
+footer div .social-button:hover {
+  color: #fff;
+}
+footer div .social-button:focus::after,
+footer div .social-button:hover::after {
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  margin-left: calc(-50% - 1px);
+}
+footer div .social-button i,
+footer div .social-button svg {
+  position: relative;
+  z-index: 1;
+  transition: 0.3s;
+}
+footer div .social-button i {
+  font-size: 23px;
+}
+footer div .social-button--mail {
+  color: #262626;
+}
+footer div .social-button--mail::after {
+  background: #f4952f;
+}
+footer div .social-button--instagram {
+  color: #262626;
+}
+footer div .social-button--instagram::after {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+footer div .social-button--linkedin {
+  color: #262626;
+}
+footer div .social-button--linkedin::after {
+  background: #0077b5;
+}
+footer div .social-button--youtube {
+  color: #262626;
+}
+footer div .social-button--youtube::after {
+  background: #f42a2a;
+}
+footer div .social-button--tiktok {
+  color: #262626;
+}
+footer div .social-button--tiktok::after {
+  background: #000d14;
+}
+footer div .social-button--twitch {
+  color: #262626;
+}
+footer div .social-button--twitch::after {
+  background: #6441a5;
+}
+footer .mentions {
+  color: aliceblue;
+  padding-top: 2em;
+}
+footer .hastag {
+  color: aliceblue;
+  padding-top: 0.5em;
 }
 
 * {

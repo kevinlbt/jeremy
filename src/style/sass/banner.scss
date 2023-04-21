@@ -2,11 +2,25 @@
 
     background-repeat: no-repeat;
     background-size: cover;
-    height: 80vh;
+    background-attachment: fixed;
+        height: 40vw;
 
     & div {
         width: 80%;
 
+        .slide1,
+            .slide2,
+            .slide3 {
+                transform: translateX(-100%);
+                opacity: 0;
+                transition: transform 0.6s ease-in-out,
+                    opacity 0.6s ease-in-out;
+            }
+        
+            .active {
+                transform: translateX(0%);
+                opacity: 1;
+            }
         & h2 {
             font-size: 6em;
             color: $text-color;
