@@ -3,14 +3,21 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-        height: 40vw;
-
+    height: 45vw;
+    
+        @media (min-width: 640px) and (max-width: 1024px) {
+            height: 70vw;
+        }
+                        @media (max-width: 640px) {
+                            height: 120vw;
+                        }
     & div {
-        width: 80%;
-
-        .slide1,
-            .slide2,
-            .slide3 {
+        width: 100%;
+            height: 100%;
+            margin: 0;
+            z-index: 20;
+            position: inherit;
+            .slide {
                 transform: translateX(-100%);
                 opacity: 0;
                 transition: transform 0.6s ease-in-out,
@@ -26,6 +33,13 @@
             color: $text-color;
             font-family: $font-title;
             text-transform: uppercase;
+            @media (min-width: 640px) and (max-width: 1024px) {
+                    font-size: 4em;
+                }
+            
+                @media (max-width: 640px) {
+                    font-size: 3em;
+                }
         }
 
         & p {
@@ -34,6 +48,13 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-bottom: 1em;
+            @media (min-width: 640px) and (max-width: 1024px) {
+                    font-size: 1em;
+                }
+            
+                @media (max-width: 640px) {
+                    font-size: 1em;
+                }
         }
 
         & a {
@@ -43,6 +64,13 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             border-bottom: 2px solid $main-color;
+            @media (min-width: 640px) and (max-width: 1024px) {
+                    font-size: 1.1em;
+                }
+            
+                @media (max-width: 640px) {
+                    font-size: 1.2em;
+                }
 
             &::after {
                 margin-left: 0.6em;
@@ -50,6 +78,11 @@
                 font-weight: 900;
                 content: "\f30b";
             }
+                                                &:hover,
+                                                &hover::after {
+                                                    color: $main-color-darker;
+                                                    border-bottom: 2px solid $main-color-darker;
+                                                }
         }
     }
 }

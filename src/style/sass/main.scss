@@ -3,10 +3,16 @@
 @import 'header.scss';
 @import 'banner.scss';
 @import 'footer.scss';
+@import 'realisation.scss';
 
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+.background {
+    background-image: url("../../public/assets/gradient.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }

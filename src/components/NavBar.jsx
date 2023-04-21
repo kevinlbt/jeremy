@@ -3,19 +3,30 @@ import styled from "styled-components"
 
 const LinkStyled = styled(Link)`
     color: aliceblue;
-    font-size: 1.6em;
-    margin: 2em;
+    font-size: 1.4vw;
+    margin: 0.8em;
     padding-bottom: 5px;
     text-transform: uppercase;
     font-weight: normal;
     letter-spacing: 3px;
+    @media (min-width: 1024px) {
+      margin: 1.3em;
+    };
+    @media (max-width: 640px) {
+      font-size: 3vw;
+      margin: 0.3em;
+    };
 `
 
 export default function NavBar () {
     return (
       <nav className="nav flex justify-between items-center">
-            <img className="m-10" src="../assets/logo-final.png" alt="logo" />
-            <div className="m-6">
+            <picture className="m-10">
+              <source media="(max-width:640px)" srcset="../assets/logo-mobile.png"/>
+              <source media="(min-width:640px)" srcset="../assets/logo-final.png"/>
+              <img src="../assets/logo-final.png" alt="logo"/>
+            </picture>
+            <div className="mx-12 my-3 flex flex-col justify-center items-center sm:flex-row">
                 <LinkStyled to="./">Home</LinkStyled>
                 <LinkStyled to="./realisation">Realisation</LinkStyled>
                 <LinkStyled to="./about">About</LinkStyled>

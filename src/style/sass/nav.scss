@@ -1,10 +1,12 @@
 .nav {
 
-    background-color: $background-color;
 
     & img {
-        width: 30rem;
+        width: 30vw;
         height: auto;
+        @media (max-width: 640px) {
+                width: 20vw;
+            }
     }
 
     & a {
@@ -14,6 +16,7 @@
             border-bottom: 1px solid $main-color;
         }
     }
+
 
 
 

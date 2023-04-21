@@ -1,0 +1,71 @@
+.real {
+
+
+    & h1 {
+        font-family: $font-title;
+        text-transform: uppercase;
+        color: $text-color;
+        font-weight: 700;
+    }
+
+    .gridvideo {
+
+        div {
+
+            @keyframes modalAppear {
+                from {
+                    transform: scale(0);
+                }
+
+                to {
+                    transform: scale(100%);
+                }
+            }
+
+            @keyframes modalDisappear {
+                from {
+                    transform: scale(100%);
+                }
+
+                to {
+                    transform: scale(0);
+                }
+            }
+
+            .modaleAppear {
+                animation: modalAppear 0.3s ease-in-out;
+            }
+
+            .modaleDisappear {
+                animation: modalDisappear 0.3s ease-in-out;
+            }
+
+            .modaleVideo {
+                position: relative;
+                background-color: $background-modale;
+                border-radius: 2rem;
+                padding: 2em;
+                width: 80%;
+                height: 90vh;
+                position: fixed;
+                top: 3rem;
+                left: 12rem;
+                z-index: 2;
+
+                & h3 {
+                    font-family: $font-title;
+                    color: $text-color;
+                    text-transform: uppercase;
+                }
+
+                & .cross-modale {
+                    position: absolute;
+                    top: 1.2em;
+                    left: 1.2em;
+                    font-size: 2em;
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}
