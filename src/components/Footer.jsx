@@ -22,7 +22,7 @@ export default function Footer () {
                         <i className="fa-solid fa-envelope"></i>
                     </a>
                 </div>
-                <a className="mentions" href="/">Mentions légales</a>
+        <a className="mentions" href="/mentions">Mentions légales</a>
                 <p className="hastag">Jeremy Pettre © 2022</p>
             </footer>
 }

@@ -40,18 +40,17 @@ export default function Modale ({modale, displayModal, modaleAppear, displayPlay
 
     return <React.Fragment>
         {displayModal && modale ===  video.id ? 
-                <div ref={wrapperRef} className={`modaleVideo flex flex-col justify-center items-center ${modaleAppear ? "modaleAppear" : "modaleDisappear"}`}>
-                  <i onClick={handleRemoveModale} className="cross-modale fa-solid fa-square-xmark cursor-pointer"></i>
-                  <h3 className='text-4xl text-center mb-7'>{video.attributes.titre} </h3>
-                  {displayPlayer ? 
-                  <ReactPlayer
-                    width='65vw'
-                    height='40vw'
-                    controls
-                    playing
-                    url={`https://www.youtube.com/watch?v=${video.attributes.videoId}`}
-                  />
-                  : null }
+            <div ref={wrapperRef} className={`modaleVideo flex flex-col justify-center sm:justify-around items-center ${modaleAppear ? "modaleAppear" : "modaleDisappear"}`}>
+                <i onClick={handleRemoveModale} className="cross-modale fa-solid fa-square-xmark cursor-pointer"></i>
+                <h3 className='text-2xl sm:text-4xl text-center mb-9 mt-6'>{video.attributes.titre} </h3>
+                {displayPlayer ?
+                    <ReactPlayer
+                        width='65vw'
+                        height='40vw'
+                        controls
+                        playing
+                        url={`https://www.youtube.com/embed/${video.attributes.videoId}`} />
+                    : null}
                 </div> 
               : null }
     </React.Fragment>

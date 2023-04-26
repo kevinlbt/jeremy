@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import NavBar from './components/NavBar';
 import Footer from './components/Footer'
+import Mentions from './pages/Mentions'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +22,7 @@ root.render(
         <Route path='/realisation' Component={Realisation}/>
         <Route path='/about' Component={About}/>
         <Route path='/contact' Component={Contact}/>
+        <Route path='/mentions' Component={Mentions} />
       </Routes>
       <Footer />
     </BrowserRouter>

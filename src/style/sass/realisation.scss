@@ -1,5 +1,15 @@
+@keyframes spin_51 {
+    from {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
 .real {
 
+    min-height: 71vh;
 
     & h1 {
         font-family: $font-title;
@@ -8,6 +18,17 @@
         font-weight: 700;
     }
 
+.loader {
+    --dim: 10rem;
+    width: var(--dim);
+    height: var(--dim);
+    border: 7px solid $main-color;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: spin_51 1.5s infinite linear;
+
+}
     .gridvideo {
 
         div {
@@ -49,9 +70,20 @@
                 height: 90vh;
                 position: fixed;
                 top: 3rem;
-                left: 12rem;
+                left: 12vw;
                 z-index: 2;
 
+                @media (min-width: 640px) and (max-width: 1024px) {
+                        top: 3rem;
+                        left: 5rem;
+                        height: 70vh;
+                    }
+                
+                    @media (max-width: 640px) {
+                        top: 9rem;
+                        left: 2.5rem;
+                        height: 45vh;
+                    }
                 & h3 {
                     font-family: $font-title;
                     color: $text-color;
@@ -64,6 +96,11 @@
                     left: 1.2em;
                     font-size: 2em;
                     color: $main-color;
+                @media (max-width: 640px) {
+                        font-size: 1.3em;
+                        top: 0.9em;
+                        left: 0.9em;
+                    }
                 }
             }
         }

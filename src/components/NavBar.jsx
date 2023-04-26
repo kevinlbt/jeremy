@@ -22,9 +22,9 @@ export default function NavBar () {
     return (
       <nav className="nav flex justify-between items-center">
             <picture className="m-10">
-              <source media="(max-width:640px)" srcset="../assets/logo-mobile.png"/>
-              <source media="(min-width:640px)" srcset="../assets/logo-final.png"/>
-              <img src="../assets/logo-final.png" alt="logo"/>
+          <source media="(max-width:640px)" srcSet="../assets/logo-mobile.png" />
+          <source media="(min-width:640px)" srcSet="../assets/logo-final.png" />
+          <img srcSet="../assets/logo-final.png" alt="logo" />
             </picture>
             <div className="mx-12 my-3 flex flex-col justify-center items-center sm:flex-row">
                 <LinkStyled to="./">Home</LinkStyled>

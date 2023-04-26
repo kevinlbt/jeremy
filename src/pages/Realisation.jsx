@@ -3,7 +3,7 @@ import axios from 'axios';
 import Modale from '../components/modale';
 import Select from '../components/Select';
 
-const token = "16a6cdf9647c958ad6a1c0719c4ae8b8ad3284f226765e18aef0b9237f0b52cce29f8f52d85016cf622887dfeaf6dbd9380eff17606836410a7db2df58c7557c83efeddf6068a47da9c2ce831cb8ea637f2c7b1ac2ddb097aef2f5da0e881d6d96d8f18f4dd910757bc64d62ca37a557334161d3a2d60532fc0f0aa2c0baa511";
+const token = "e98e1b6a60e1cce2296a55b9bbb7a62e16436ddea249e42b733df5df240520867e8a9fa4ee90332b8cc7d1d38b40ef8492a07a60c93e912e2ce184470272893f5e6b65fa3fb6a2c0668e4daedd88dd5fda997e557622a86f784a70fe60d071c9e1d55afd4e6c63b3701142bb694a7bc25d03f6aadcadb1a8edc87019c1c9d5e0";
 
 export default function Realisation() {
 
@@ -16,7 +16,7 @@ export default function Realisation() {
 
     useEffect(() => {
       (async function () {
-        const {data} = await axios.get("http://localhost:1338/api/videos?populate=*", {
+        const { data } = await axios.get("https://my-strapi.kevinlebot.com/api/videos?populate=*", {
           headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -34,19 +34,21 @@ export default function Realisation() {
       setModaleAppear(true);
       window.setTimeout(() => {
         setDisplayPlayer(true)
-      },200)
+      }, 200)
     }
 
     return (
       <section className="real">
-        <div className="flex justify-evenly items-center p-12">
-          <h1 className="text-7xl">realisation</h1>
-          <Select allVideoData={allVideoData} videoData={videoData} setVideoData={setVideoData} />
+        <div className="flex lg:flex-row flex-col justify-evenly items-center p-12">
+          <h1 className="lg:text-7xl text-5xl mb-12 lg:mb-0">realisation</h1>
+          <Select allVideoData={allVideoData} setVideoData={setVideoData} />
         </div>
-        <div className="gridvideo grid grid-cols-3 gap-16 p-16">
+        {videoData.length === 0 ? <div className="loader mx-auto my-48"></div>
+          :
+          <div className="gridvideo grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-16 p-16">
           {videoData.map((video) => (
             <div key={video.id} className='cursor-pointer'>
-              <img onClick={() => handleOpenModale(video.id)} className='rounded-xl' src={`http://img.youtube.com/vi/${video.attributes.videoId}/maxresdefault.jpg`} alt="" />
+              <img onClick={() => handleOpenModale(video.id)} className='rounded-xl' srcSet={`http://img.youtube.com/vi/${video.attributes.videoId}/maxresdefault.jpg`} alt="" />
                 <Modale 
                   modale={modale}
                   displayModal={displayModal}
@@ -61,6 +63,8 @@ export default function Realisation() {
             </div>
           ))}
         </div>
+        }
+
       </section>
     );
   }

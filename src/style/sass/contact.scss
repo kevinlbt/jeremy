@@ -1,0 +1,33 @@
+.contact {
+
+    h1 {
+        font-family: $font-title;
+        color: $text-color;
+        text-transform: uppercase;
+    }
+
+    .img-contact img {
+        box-shadow: -30px 30px 0 $main-color;
+        border-radius: 10px;
+    }
+
+    .formulaire {
+
+        input:focus {
+            outline: none;
+        }
+
+        textarea:focus {
+            outline: none;
+        }
+
+        button {
+            background-color: $main-color;
+
+            &:hover {
+                background-color: $main-color-darker;
+                color: $text-color;
+            }
+        }
+    }
+}
