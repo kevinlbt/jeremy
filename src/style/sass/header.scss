@@ -6,8 +6,10 @@
     background-attachment: fixed;
     width: 100%;
     height: 50vw;
+    
     @media (min-width: 640px) and (max-width: 1024px) {
             background-image: url("../../public/assets/jeremyfond-tablet.webp");
+            background-attachment: scroll;
             height: 70vw;
         }
     
@@ -15,4 +17,7 @@
             background-image: url("../../public/assets/jeremyfond-mobile.webp");
             height: 120vw;
         }
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (-webkit-min-device-pixel-ratio: 2) {
+    background-attachment: scroll;
+}
 }

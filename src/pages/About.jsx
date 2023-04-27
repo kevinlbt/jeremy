@@ -2,7 +2,7 @@
 export default function About () {
     return (
       <section className="w-full lg:w-4/5 mx-auto about flex flex-col lg:flex-row justify-center items-center">
-        <div className="img-about w-2/5 lg:w-2/5 h-auto m-24">
+        <div className="img-about w-3/5 lg:w-2/5 h-auto m-24">
           <img className="rounded" srcSet="../assets/champ.webp" alt="jeremy with camera in Wheat field" />
         </div> 
 

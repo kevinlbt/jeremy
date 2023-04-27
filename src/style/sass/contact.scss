@@ -13,10 +13,32 @@
 
     .formulaire {
 
+        input {
+                margin: 1.2vw;
+        
+                @media (min-width: 640px) and (max-width: 1024px) {
+                    margin: 1.8vw;
+                }
+        
+                @media (max-width: 640px) {
+                    margin: 2vw;
+                }
+            }
         input:focus {
             outline: none;
         }
 
+textarea {
+    margin: 1.2vw;
+
+    @media (min-width: 640px) and (max-width: 1024px) {
+        margin: 1.8vw;
+    }
+
+    @media (max-width: 640px) {
+        margin: 2vw;
+    }
+}
         textarea:focus {
             outline: none;
         }

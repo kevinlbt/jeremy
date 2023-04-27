@@ -27,9 +27,9 @@ export default function NavBar () {
           <img srcSet="../assets/logo-final.png" alt="logo" />
             </picture>
             <div className="mx-12 my-3 flex flex-col justify-center items-center sm:flex-row">
-                <LinkStyled to="./">Home</LinkStyled>
+          <LinkStyled to="./">Accueil</LinkStyled>
                 <LinkStyled to="./realisation">Realisation</LinkStyled>
-                <LinkStyled to="./about">About</LinkStyled>
+          <LinkStyled to="./about">A propos</LinkStyled>
                 <LinkStyled to="./contact">Contact</LinkStyled>
             </div>
       </nav>

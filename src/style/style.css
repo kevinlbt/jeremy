@@ -26,6 +26,7 @@
 @media (min-width: 640px) and (max-width: 1024px) {
   .header {
     background-image: url("../../public/assets/jeremyfond-tablet.webp");
+    background-attachment: scroll;
     height: 70vw;
   }
 }
@@ -33,6 +34,11 @@
   .header {
     background-image: url("../../public/assets/jeremyfond-mobile.webp");
     height: 120vw;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (-webkit-min-device-pixel-ratio: 2) {
+  .header {
+    background-attachment: scroll;
   }
 }
 
@@ -45,11 +51,17 @@
 @media (min-width: 640px) and (max-width: 1024px) {
   .banner {
     height: 70vw;
+    background-attachment: scroll;
   }
 }
 @media (max-width: 640px) {
   .banner {
     height: 120vw;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (-webkit-min-device-pixel-ratio: 2) {
+  .banner {
+    background-attachment: scroll;
   }
 }
 .banner div {
@@ -304,7 +316,7 @@ footer .hastag {
   .real .gridvideo div .modaleVideo {
     top: 9rem;
     left: 2.5rem;
-    height: 45vh;
+    height: 50vh;
   }
 }
 .real .gridvideo div .modaleVideo h3 {
@@ -328,7 +340,7 @@ footer .hastag {
 }
 
 .about {
-  min-height: 70vh;
+  min-height: 75vh;
 }
 .about .img-about {
   box-shadow: 15px 15px 0 #88E9D4;
@@ -364,8 +376,34 @@ footer .hastag {
   box-shadow: -30px 30px 0 #88E9D4;
   border-radius: 10px;
 }
+.contact .formulaire input {
+  margin: 1.2vw;
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  .contact .formulaire input {
+    margin: 1.8vw;
+  }
+}
+@media (max-width: 640px) {
+  .contact .formulaire input {
+    margin: 2vw;
+  }
+}
 .contact .formulaire input:focus {
   outline: none;
+}
+.contact .formulaire textarea {
+  margin: 1.2vw;
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  .contact .formulaire textarea {
+    margin: 1.8vw;
+  }
+}
+@media (max-width: 640px) {
+  .contact .formulaire textarea {
+    margin: 2vw;
+  }
 }
 .contact .formulaire textarea:focus {
   outline: none;
