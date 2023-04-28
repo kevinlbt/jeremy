@@ -52,7 +52,7 @@ export default function Modale ({modale, displayModal, modaleAppear, displayPlay
                         playing
                         origin="http://www.youtube.com"
                         baseUrl="https://youtube.com"
-                        url={`https://www.youtube.com/embed/${video.attributes.videoId}`} />
+                        url={`https://youtu.be/${video.attributes.videoId}`} />
                     : null}
                 </div> 
               : null }
