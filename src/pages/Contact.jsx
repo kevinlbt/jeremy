@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import DOMPurify from 'dompurify';
 
 const AUTH_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
 
@@ -12,6 +13,7 @@ export default function Contact() {
 
   const [IfMailSend, setIfMailSend] = useState(false);
   const [mailResponse, setMailResponse] = useState(null);
+  const [ifError, setIfError] = useState(false);
   const [name, setName] = useState('');
   const [firstname, setFirstname] = useState('');
   const [subject, setSubject] = useState('');
@@ -24,20 +26,28 @@ export default function Contact() {
     if (!replyTo || !name || !firstname || !text || !subject) {
       setMailResponse("Veuillez remplir tous les champs.");
       setIfMailSend(true);
+      setIfError(true);
       return;
     }
     if (!isValidEmail(replyTo)) {
       setMailResponse("Veuillez saisir une adresse email valide");
       setIfMailSend(true);
+      setIfError(true);
       return;
     }
 
+    const sanitizeName = DOMPurify.sanitize(name);
+    const sanitizeFirstname = DOMPurify.sanitize(firstname);
+    const sanitizeSubject = DOMPurify.sanitize(subject);
+    const sanitizeText = DOMPurify.sanitize(text);
+    const sanitizeReplyTo = DOMPurify.sanitize(replyTo);
+
     const data = {
-      firstname,
-      name,
-      subject,
-      text,
-      replyTo
+      firstname: sanitizeFirstname,
+      name: sanitizeName,
+      subject: sanitizeSubject,
+      text: sanitizeText,
+      replyTo: sanitizeReplyTo
     };
 
     try {
@@ -46,6 +56,7 @@ export default function Contact() {
           'authorization': AUTH_TOKEN
         }
       });
+      setIfError(false);
       setIfMailSend(true)
       setMailResponse(response.data)
     } catch (error) {
@@ -73,7 +84,7 @@ export default function Contact() {
     return (
       <section className="contact">
         <h1 className="text-6xl lg:text-7xl text-center m-7">Contact</h1>
-        {IfMailSend ? <p className="text-3xl text-center text-green-500">{mailResponse}</p> : null}
+        {IfMailSend ? <p className={`text-3xl text-center ${ifError ? "text-red-500" : "text-green-500"}`}>{mailResponse}</p> : null}
         <div className="flex flex-col lg:flex-row justify-center items-center lg:w-4/5 mx-auto">
           <div className="img-contact w-2/5 lg:w-2/6 h-auto m-12 lg:m-24">
             <img className="rounded" srcSet="../assets/contactjeremy.webp" alt="jeremy with camera in Wheat field" />
