@@ -17,13 +17,14 @@ export default function Realisation() {
 
     useEffect(() => {
       (async function () {
-        const { data } = await axios.get("https://my-strapi.kevinlebot.com/api/videos?populate=*", {
+        const { data } = await axios.get("https://my-strapi.kevinlebot.com/api/videos?pagination[page]=1&pagination[pageSize]=100&populate=*", {
           headers: {
               Authorization: `Bearer ${token}`,
             },
         });
         setAllVideoData(data.data);
         setVideoData(data.data);
+        console.log(data.data);
       })();
     }, [setAllVideoData, setVideoData])
 
