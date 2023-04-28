@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Modale from '../components/modale';
 import Select from '../components/Select';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const token = "e98e1b6a60e1cce2296a55b9bbb7a62e16436ddea249e42b733df5df240520867e8a9fa4ee90332b8cc7d1d38b40ef8492a07a60c93e912e2ce184470272893f5e6b65fa3fb6a2c0668e4daedd88dd5fda997e557622a86f784a70fe60d071c9e1d55afd4e6c63b3701142bb694a7bc25d03f6aadcadb1a8edc87019c1c9d5e0";
 
@@ -45,11 +46,12 @@ export default function Realisation() {
         </div>
         {videoData.length === 0 ? <div className="loader mx-auto my-48"></div>
           :
-          <div className="gridvideo grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-16 p-16">
+          <TransitionGroup className="gridvideo grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-16 p-16">
           {videoData.map((video) => (
-            <div key={video.id} className='cursor-pointer'>
-              <img onClick={() => handleOpenModale(video.id)} className='rounded-xl' srcSet={`http://img.youtube.com/vi/${video.attributes.videoId}/maxresdefault.jpg`} alt="" />
-                <Modale 
+            <CSSTransition key={video.id} timeout={300} classNames="fade">
+              <div key={video.id} className='cursor-pointer'>
+                <img onClick={() => handleOpenModale(video.id)} className='rounded-xl' srcSet={`http://img.youtube.com/vi/${video.attributes.videoId}/maxresdefault.jpg`} alt="" />
+                <Modale
                   modale={modale}
                   displayModal={displayModal}
                   modaleAppear={modaleAppear}
@@ -60,9 +62,10 @@ export default function Realisation() {
                   setDisplayPlayer={setDisplayPlayer}
                   video={video}
                 />
-            </div>
+              </div>
+            </CSSTransition>
           ))}
-        </div>
+          </TransitionGroup>
         }
 
       </section>

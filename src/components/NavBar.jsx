@@ -26,7 +26,7 @@ export default function NavBar () {
           <source media="(min-width:640px)" srcSet="../assets/logo-final.png" />
           <img srcSet="../assets/logo-final.png" alt="logo" />
             </picture>
-            <div className="mx-12 my-3 flex flex-col justify-center items-center sm:flex-row">
+        <div className="pr-5 flex flex-col justify-center items-center sm:flex-row">
           <LinkStyled to="./">Accueil</LinkStyled>
                 <LinkStyled to="./realisation">Realisation</LinkStyled>
           <LinkStyled to="./about">A propos</LinkStyled>

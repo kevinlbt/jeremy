@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import DOMPurify from 'dompurify';
+import Cookies from 'js-cookie';
 
 const AUTH_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
 
@@ -10,6 +11,8 @@ function isValidEmail(email) {
 }
 
 export default function Contact() {
+
+  const cookieExists = Cookies.get('contacted');
 
   const [IfMailSend, setIfMailSend] = useState(false);
   const [mailResponse, setMailResponse] = useState(null);
@@ -35,7 +38,12 @@ export default function Contact() {
       setIfError(true);
       return;
     }
-
+    if (cookieExists) {
+      setMailResponse('Vous nous avez deja contacter, essayer plus tard.');
+      setIfMailSend(true);
+      setIfError(true);
+      return;
+    }
     const sanitizeName = DOMPurify.sanitize(name);
     const sanitizeFirstname = DOMPurify.sanitize(firstname);
     const sanitizeSubject = DOMPurify.sanitize(subject);
@@ -51,7 +59,7 @@ export default function Contact() {
     };
 
     try {
-      const response = await axios.post('http://localhost:3050/api/sendEmail', data, {
+      const response = await axios.post('http://5.196.23.109/api/sendEmail', data, {
         headers: {
           'authorization': AUTH_TOKEN
         }
@@ -59,6 +67,7 @@ export default function Contact() {
       setIfError(false);
       setIfMailSend(true)
       setMailResponse(response.data)
+      Cookies.set('contacted', true, { expires: 1 });
     } catch (error) {
       console.error(error);
 
@@ -84,9 +93,9 @@ export default function Contact() {
     return (
       <section className="contact">
         <h1 className="text-6xl lg:text-7xl text-center m-7">Contact</h1>
-        {IfMailSend ? <p className={`text-3xl text-center ${ifError ? "text-red-500" : "text-green-500"}`}>{mailResponse}</p> : null}
+        {IfMailSend ? <p className={`text-3xl text-center h-9 ${ifError ? "text-red-500" : "text-green-500"}`}>{mailResponse}</p> : <p className="h-9"></p>}
         <div className="flex flex-col lg:flex-row justify-center items-center lg:w-4/5 mx-auto">
-          <div className="img-contact w-2/5 lg:w-2/6 h-auto m-12 lg:m-24">
+          <div className="img-contact w-3/5 sm:w-2/5 lg:w-2/6 h-auto sm:m-12 lg:m-24">
             <img className="rounded" srcSet="../assets/contactjeremy.webp" alt="jeremy with camera in Wheat field" />
           </div> 
           <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center formulaire w-2/4 lg:w-1/3 lg:pt-9 mx-auto m-12" >

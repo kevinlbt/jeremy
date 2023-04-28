@@ -45,8 +45,9 @@ export default function Modale ({modale, displayModal, modaleAppear, displayPlay
                 <h3 className='text-2xl sm:text-4xl text-center mb-9 mt-6'>{video.attributes.titre} </h3>
                 {displayPlayer ?
                     <ReactPlayer
-                        width='65vw'
-                        height='40vw'
+                        className="react_player"
+                        width='62vw'
+                        height='min-content'
                         controls
                         playing
                         url={`https://www.youtube.com/embed/${video.attributes.videoId}`} />
