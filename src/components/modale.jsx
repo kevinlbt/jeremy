@@ -50,6 +50,7 @@ export default function Modale ({modale, displayModal, modaleAppear, displayPlay
                         height='min-content'
                         controls
                         playing
+                        origin="http://www.youtube.com"
                         url={`https://www.youtube.com/embed/${video.attributes.videoId}`} />
                     : null}
                 </div> 
