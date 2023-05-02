@@ -38,12 +38,14 @@ export default function Contact() {
       setIfError(true);
       return;
     }
+
     if (cookieExists) {
       setMailResponse('Vous nous avez deja contacter, essayer plus tard.');
       setIfMailSend(true);
       setIfError(true);
       return;
     }
+
     const sanitizeName = DOMPurify.sanitize(name);
     const sanitizeFirstname = DOMPurify.sanitize(firstname);
     const sanitizeSubject = DOMPurify.sanitize(subject);

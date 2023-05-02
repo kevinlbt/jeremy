@@ -58,7 +58,7 @@ export default function Banner ({data}) {
                 <div onMouseEnter={()=> displayVideo(containerRef, data.video)} onMouseLeave={()=> destroyVideo(containerRef)} ref={containerRef} className="flex flex-col justify-center">
                     <h2 className={`slide ml-10 ${isVisible ? "active" : null}`}><strong>{data.channel}</strong></h2>
                     <p className={`slide ml-10 ${isVisible ? "active" : null}`}>{data.description}</p>
-                    <a className={`slide ml-10 ${isVisible ? "active" : null}`} href={data.youtube} >Voir la chaîne</a> 
+            <a className={`slide ml-10 ${isVisible ? "active" : null}`} href={data.youtube} target="_blank" rel="noreferrer" >Voir la chaîne</a> 
                 </div>
             </BannerSection>
 }
