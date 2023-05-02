@@ -17,7 +17,7 @@ export default function Realisation() {
 
     useEffect(() => {
       (async function () {
-        const { data } = await axios.get("https://my-strapi.kevinlebot.com/api/videos?pagination[page]=1&pagination[pageSize]=100&populate=*", {
+        const { data } = await axios.get("https://my-strapi.kevinlebot.com/api/videos?pagination[page]=1&pagination[pageSize]=100&populate=*&sort=id%3Adesc", {
           headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -49,7 +49,7 @@ export default function Realisation() {
           :
           <TransitionGroup className="gridvideo grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-16 p-16">
           {videoData.map((video) => (
-            <CSSTransition key={video.id} timeout={300} classNames="fade">
+            <CSSTransition key={video.id} timeout={500} classNames="fade">
               <div key={video.id} className='cursor-pointer'>
                 <img onClick={() => handleOpenModale(video.id)} className='rounded-xl' srcSet={`https://img.youtube.com/vi/${video.attributes.videoId}/maxresdefault.jpg`} alt="" />
                 <Modale
