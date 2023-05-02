@@ -51,7 +51,7 @@ export default function Realisation() {
           {videoData.map((video) => (
             <CSSTransition key={video.id} timeout={300} classNames="fade">
               <div key={video.id} className='cursor-pointer'>
-                <img onClick={() => handleOpenModale(video.id)} className='rounded-xl' srcSet={`http://img.youtube.com/vi/${video.attributes.videoId}/maxresdefault.jpg`} alt="" />
+                <img onClick={() => handleOpenModale(video.id)} className='rounded-xl' srcSet={`https://img.youtube.com/vi/${video.attributes.videoId}/maxresdefault.jpg`} alt="" />
                 <Modale
                   modale={modale}
                   displayModal={displayModal}
