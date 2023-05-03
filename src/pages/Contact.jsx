@@ -61,7 +61,7 @@ export default function Contact() {
     };
 
     try {
-      const response = await axios.post('http://5.196.23.109/api/sendEmail', data, {
+      const response = await axios.post('http://email.api.kevinlebot.com/api/sendEmail', data, {
         headers: {
           'authorization': AUTH_TOKEN,
           'dest': "jp.postprod@gmail.com",
