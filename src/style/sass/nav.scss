@@ -1,23 +1,61 @@
 .nav {
 
+    .logo {
 
-    & img {
-        width: 30vw;
-        height: auto;
-        @media (max-width: 640px) {
-                width: 20vw;
-            }
-    }
+        transition: all 0.3s ease-in-out;
 
-    & a {
-        font-family: $font-title;
+        & img {
+            width: 10vw;
+            height: auto;
+            
+            @media (max-width: 640px) {
+                    width: 30vw;
+                }
+        }
 
         &:hover {
-            border-bottom: 1px solid $main-color;
+
+            transform: rotate(360deg);
+            
         }
     }
 
 
+    .nav_link {
 
+        a {
+            font-family: $font-title;
+            font-weight: 600;
+            color: $main-color;
+            transition: all .5s;
+            border-bottom: solid 2px transparent;
+            position: relative;
+    
+            &::after {
+
+                position: absolute;
+                top: 2em;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 0%;
+                content: '.';
+                color: transparent;
+                background: $main-color;
+                height: 2px;
+                transition: all .5s;
+            }
+
+            &:hover::after {
+
+                width: 100%;
+            }
+
+            &:hover {
+
+                color: $main-color;
+            }
+        }
+    }
 
 }

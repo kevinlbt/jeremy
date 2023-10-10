@@ -27,4 +27,5 @@ export const data = [
         imageMobile: "../assets/music-mobile.webp",
         video: "../assets/video/zeremymusic.mp4"
     }
+
 ]

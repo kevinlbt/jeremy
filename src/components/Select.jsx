@@ -29,7 +29,7 @@ export default function Select({ setVideoData, allVideoData }) {
             setVideoData(newDataFiltered);
         }
     }
-    return <select onChange={handleChange} className="w-2/3 sm:w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-green-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:max-w-xs sm:text-sm sm:leading-6">
+    return <select onChange={handleChange} className="w-2/3 lg:ml-24 sm:w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-yellow-500 focus:ring-2 focus:ring-inset focus:ring-yellow-500 sm:max-w-xs sm:text-sm sm:leading-6">
                 <option defaultValue="All">All</option>
                 {categories.map((categorie) => (
                     <option key={categorie.id} value={categorie.attributes.categorie}>{categorie.attributes.categorie}</option>

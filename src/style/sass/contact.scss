@@ -2,7 +2,8 @@
 
     h1 {
         font-family: $font-title;
-        color: $text-color;
+        color: $main-color;
+        font-weight: 900;
         text-transform: uppercase;
     }
 
@@ -45,6 +46,8 @@ textarea {
 
         button {
             background-color: $main-color;
+            font-weight: 900;
+            font-family: $font-title;
 
             &:hover {
                 background-color: $main-color-darker;

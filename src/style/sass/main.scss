@@ -4,8 +4,9 @@
 @import 'banner.scss';
 @import 'footer.scss';
 @import 'realisation.scss';
-@import 'about.scss';
+@import 'youtube.scss';
 @import 'contact.scss';
+@import 'about.scss';
 
 
 * {
@@ -14,7 +15,7 @@
     padding: 0;
 }
 .background {
-    background-image: url("../../public/assets/gradient.png");
+    background-color: $background-color;
     background-repeat: no-repeat;
     background-size: cover;
 }

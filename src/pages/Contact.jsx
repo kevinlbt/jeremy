@@ -95,7 +95,7 @@ export default function Contact() {
 
     return (
       <section className="contact">
-        <h1 className="text-6xl lg:text-7xl text-center m-7">Contact</h1>
+        <h1 className="text-6xl lg:text-7xl pl-12 mt-12">Me contacter</h1>
         {IfMailSend ? <p className={`text-3xl text-center h-9 ${ifError ? "text-red-500" : "text-green-500"}`}>{mailResponse}</p> : <p className="h-9"></p>}
         <div className="flex flex-col lg:flex-row justify-center items-center lg:w-4/5 mx-auto">
           <div className="img-contact w-3/5 sm:w-2/5 lg:w-2/6 h-auto sm:m-12 lg:m-24">

@@ -4,7 +4,7 @@ import './index.css';
 import './style/style.css';
 import Home from './pages/Home';
 import Realisation from './pages/Realisation';
-import About from './pages/About';
+import Youtube from './pages/youtube';
 import Contact from './pages/Contact';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -20,7 +20,7 @@ root.render(
       <Routes>
         <Route path='/' Component={Home}/>
         <Route path='/realisation' Component={Realisation}/>
-        <Route path='/about' Component={About}/>
+        <Route path='/youtube' Component={Youtube}/>
         <Route path='/contact' Component={Contact}/>
         <Route path='/mentions' Component={Mentions} />
       </Routes>

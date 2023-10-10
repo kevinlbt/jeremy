@@ -1,16 +1,13 @@
 import React from 'react';
 import Header from '../components/Header'
-import Banner from '../components/Banner'
-import {data} from '../data/data'
+import About from '../components/about';
 
 function Home() {
 
   return (
     <React.Fragment>
         <Header />
-        <Banner data={data[0]}/>
-        <Banner data={data[1]}/>
-        <Banner data={data[2]}/>
+        <About />
     </React.Fragment>
   );
 }

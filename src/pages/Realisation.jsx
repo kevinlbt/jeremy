@@ -41,8 +41,8 @@ export default function Realisation() {
 
     return (
       <section className="real">
-        <div className="flex lg:flex-row flex-col justify-evenly items-center p-12">
-          <h1 className="lg:text-7xl text-5xl mb-12 lg:mb-0">realisation</h1>
+        <div className="flex lg:flex-row flex-col justify-center sm:justify-start items-center p-12">
+          <h1 className="lg:text-7xl text-5xl mb-12 lg:mb-0 lg:pr-24">realisation</h1>
           <Select allVideoData={allVideoData} setVideoData={setVideoData} />
         </div>
         {videoData.length === 0 ? <div className="loader mx-auto my-48"></div>
