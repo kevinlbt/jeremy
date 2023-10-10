@@ -19,7 +19,7 @@ export default function About () {
                 Ma spécialité est la création de contenu en ligne pour youtube et les réseaux sociaux. N'hésitez 
                 pas à me contacter, je vous aiderais à donner vie à vos idées !
             </p>
-            <a href="/contact" className="lg:w-2/4 xl:w-3/5 self-center text-center my-6 rounded-md px-5 lg:px-6 xl:px-8 py-2 text-xl">contacter-moi</a>
+            <a href="/contact" className="lg:w-2/4 xl:w-3/5 self-center text-center my-6 rounded-md px-5 lg:px-6 xl:px-8 py-2 text-xl">CONTACTEZ-MOI</a>
         </div>
     </div>
 }
