@@ -16,6 +16,7 @@ export default function Header() {
         videoSrc: "mp4:"+video,
         videoPlayOnlyVisible: "true",
         container: '.banner',
+        disableParallax: /iPad|iPhone|iPod|Android|macos/,
         });
 
     })
