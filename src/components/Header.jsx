@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { displayVideo } from '../utils/jarallaxVideo'
+import { jarallax, jarallaxVideo } from "jarallax";
 import { useRef } from 'react'
 import video from "../assets/video/video.mp4"
 
@@ -9,7 +9,14 @@ export default function Header() {
 
     useEffect (() => {
 
-        displayVideo(containerRef, video)
+        jarallaxVideo();
+        jarallax(containerRef.current, {
+        type: 'scroll',
+        speed: 0.4,
+        videoSrc: "mp4:"+video,
+        videoPlayOnlyVisible: "true",
+        container: '.banner',
+        });
 
     })
 
