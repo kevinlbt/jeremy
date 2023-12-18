@@ -70,6 +70,7 @@ export default function Contact() {
       setIfError(false);
       setIfMailSend(true)
       setMailResponse(response.data)
+      console.log(response.data)
       Cookies.set('contacted', true, { expires: 1 });
     } catch (error) {
       console.error(error);
@@ -96,17 +97,17 @@ export default function Contact() {
     return (
       <section className="contact">
         <h1 className="text-5xl lg:text-7xl text-center sm:text-left sm:pl-12 mt-12">Me contacter</h1>
-        {IfMailSend ? <p className={`text-3xl text-center h-9 ${ifError ? "text-red-500" : "text-green-500"}`}>{mailResponse}</p> : <p className="h-9"></p>}
         <div className="flex flex-col lg:flex-row justify-center items-center lg:w-4/5 mx-auto">
           <div className="img-contact w-3/5 sm:w-2/5 lg:w-2/6 h-auto sm:m-12 lg:m-24">
             <img className="rounded" srcSet="../assets/contactjeremy.webp" alt="jeremy with camera in Wheat field" />
           </div> 
           <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center formulaire w-2/4 lg:w-1/3 lg:pt-9 mx-auto m-12" >
-            <input onChange={HandleNameChange} type="text" name="name" placeholder=" nom" className="w-full rounded-md py-1.5 focus:ring-4 focus:ring-green-700" />
-            <input onChange={HandleFirstnameChange} type="text" name="firstname" placeholder=" prénom" className="w-full rounded-md py-1.5 focus:ring-4 focus:ring-green-700" />
-            <input onChange={HandleEmailChange} type="email" name="email" placeholder=" Email" className="w-full rounded-md py-1.5 focus:ring-4 focus:ring-green-700" />
-            <input onChange={HandleSubjectChange} type="text" name="subject" placeholder=" Sujet" className="w-full rounded-md py-1.5 focus:ring-4 focus:ring-green-700" />
-            <textarea onChange={HandleMessageChange} name="message" rows="7" className="w-full rounded-md py-1.5 focus:ring-4 focus:ring-green-700"></textarea>
+            <input onChange={HandleNameChange} type="text" name="name" placeholder=" nom" className="w-full rounded-md py-1.5 focus:ring-4 focus:ring-yellow-500" />
+            <input onChange={HandleFirstnameChange} type="text" name="firstname" placeholder=" prénom" className="w-full rounded-md py-1.5 focus:ring-4 focus:ring-yellow-500" />
+            <input onChange={HandleEmailChange} type="email" name="email" placeholder=" Email" className="w-full rounded-md py-1.5 focus:ring-4 focus:ring-yellow-500" />
+            <input onChange={HandleSubjectChange} type="text" name="subject" placeholder=" Sujet" className="w-full rounded-md py-1.5 focus:ring-4 focus:ring-yellow-500" />
+            <textarea onChange={HandleMessageChange} name="message" rows="7" className="w-full rounded-md py-1.5 focus:ring-4 focus:ring-yellow-500"></textarea>
+            {IfMailSend ? <p className={`text-3xl text-center h-9 ${ifError ? "text-red-500" : "text-green-500"}`}>{mailResponse}</p> : <p className="h-9"></p>}
             <button type="submit" className="text-center my-6 rounded-md px-12 py-2 text-xl">Envoyer</button>
           </form>
         </div>
