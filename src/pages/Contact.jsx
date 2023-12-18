@@ -107,8 +107,8 @@ export default function Contact() {
             <input onChange={HandleEmailChange} type="email" name="email" placeholder=" Email" className="w-full rounded-md py-1.5 focus:ring-4 focus:ring-yellow-500" />
             <input onChange={HandleSubjectChange} type="text" name="subject" placeholder=" Sujet" className="w-full rounded-md py-1.5 focus:ring-4 focus:ring-yellow-500" />
             <textarea onChange={HandleMessageChange} name="message" rows="7" className="w-full rounded-md py-1.5 focus:ring-4 focus:ring-yellow-500"></textarea>
-            {IfMailSend ? <p className={`text-3xl text-center h-9 ${ifError ? "text-red-500" : "text-green-500"}`}>{mailResponse}</p> : <p className="h-9"></p>}
             <button type="submit" className="text-center my-6 rounded-md px-12 py-2 text-xl">Envoyer</button>
+            {IfMailSend ? <p className={`text-3xl text-center h-9 ${ifError ? "text-red-500" : "text-green-500"}`}>{mailResponse}</p> : <p className="h-9"></p>}
           </form>
         </div>
       </section>
