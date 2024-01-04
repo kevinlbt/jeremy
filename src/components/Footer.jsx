@@ -6,7 +6,7 @@ export default function Footer () {
             <a href="https://www.instagram.com/zeremy.mov/" target="_blank" rel="noreferrer" className="social-buttons__button social-button social-button--instagram" aria-label="instagram">
                         <i className="fa-brands fa-instagram"></i>
                     </a>
-            <a href="https://www.linkedin.com/in/jeremy-pettre-3a2720188/" target="_blank" rel="noreferrer" className="social-buttons__button social-button social-button--linkedin" aria-label="linkedin">
+            <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fjeremypettre%2F%3Ffbclid%3DIwAR0s1Aw-XhucW_zNGRxHb0Zvar1KBJwauZXP4PN-w_f1MoRMPbf9X7FwAfY&h=AT3amdqacAXr3l-59ka7kMLSsVqxb-fKxd0mP6rAbgqAyb285zOtTcnK5AawJYaP11tntAVUyrUThv50R9LzhwJIlRNPyN5fsIUreQuxQoRNanuy9TN2A0MMJZATGSeraTSkvA" target="_blank" rel="noreferrer" className="social-buttons__button social-button social-button--linkedin" aria-label="linkedin">
                         <i className="fa-brands fa-linkedin-in"></i>
                     </a>
             <a href="https://www.twitch.tv/the_zeremy" target="_blank" rel="noreferrer" className="social-buttons__button social-button social-button--twitch" aria-label="twitch">
